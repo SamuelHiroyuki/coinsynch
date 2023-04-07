@@ -18,7 +18,7 @@ export function Header() {
                     <Link href="#about">About us</Link>
                     <Link href="#top-cryptos">Top Cryptos</Link>
                     <Link href="/signin" className='ml-auto'>Sign in</Link>
-                    <Button href="/signup">Sign up</Button>
+                    <Button size="sm" href="/signup">Sign up</Button>
                 </nav>
                 <Link href="#" className='md:hidden ml-auto'>
                     <Image

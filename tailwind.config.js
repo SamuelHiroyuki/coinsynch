@@ -17,7 +17,7 @@ module.exports = {
       center: true
     },
     colors: {
-      base: "#5D6670",
+      default: "#5D6670",
       white: "#FFFFFF",
       black: "#000000",
       primary: {

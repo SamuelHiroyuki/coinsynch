@@ -2,25 +2,32 @@ import { ComponentProps } from "react";
 import { cva, VariantProps, cx } from "class-variance-authority";
 import Link, { LinkProps } from "next/link";
 
-const styles = cva("rounded-3xl py-2 px-4 text-white label", {
+const styles = cva("rounded-3xl text-white label", {
     variants: {
         intent: {
             primary: "bg-primary-500",
             tertiary: "bg-tertiary-700",
+        },
+        size: {
+            sm: "py-2 px-4",
+            md: "py-[14px] px-6",
         }
     },
     defaultVariants: {
-        intent: "primary"
+        intent: "primary",
+        size: "md"
     }
 })
 
-type ButtonOrLinkProps = ComponentProps<'button'> & LinkProps;
+type ButtonOrLinkProps = ComponentProps<'button'> & Partial<LinkProps>;
 
 interface Props extends ButtonOrLinkProps, VariantProps<typeof styles> { }
 
-export function Button({ intent, href, className, ...props }: Props) {
+export function Button({ intent, size, href, className, ...props }: Props) {
+    const classes = cx(styles({ intent, size }), className)
+
     return Boolean(href) ?
-        <Link className={cx(styles({ intent }), className)} href={href} {...props as Omit<LinkProps, "href">} />
+        <Link className={classes} href={href!} {...props as Omit<LinkProps, "href">} />
         :
-        <button className={cx(styles({ intent }), className)} {...props} />
+        <button className={classes} {...props} />
 }
