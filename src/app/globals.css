@@ -2,26 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  h1 {
+    @apply text-5xl leading-[3.5rem] -tracking-widest;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  h2 {
+    @apply text-4xl leading-[3rem] -tracking-widest;
+  }
+
+  h3 {
+    @apply text-[2rem] leading-10 tracking-normal;
+  }
+
+  h4 {
+    @apply text-2xl leading-8 tracking-normal;
+  }
+
+  h5 {
+    @apply text-base leading-6 tracking-normal;
+  }
+
+  p {
+    @apply text-xl leading-6 tracking-normal;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .label {
+    @apply text-sm leading-4 tracking-normal;
+  }
+
+  .small-label {
+    @apply text-xs leading-[14px] tracking-normal;
+  }
 }
