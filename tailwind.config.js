@@ -67,9 +67,16 @@ module.exports = {
     },
     boxShadow: {
       DEFAULT: '0px 4px 8px rgba(77, 77, 77, 0.1)',
-      top: "0px 4px 8px rgba(77, 77, 77, 0.1), 0px -4px 8px rgba(77, 77, 77, 0.1)",
+      top: "0px -4px 8px rgba(77, 77, 77, 0.1)",
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        fancy: "0px 12px 24px rgba(0, 0, 0, 0.05)",
+      },
+      backgroundImage: {
+        'white-contrast': "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #F7F7F7 100%);"
+      }
+    },
   },
   plugins: [
     function ({ addComponents }) {

@@ -26,8 +26,8 @@ interface Props extends ButtonOrLinkProps, VariantProps<typeof styles> { }
 export function Button({ intent, size, href, className, ...props }: Props) {
     const classes = cx(styles({ intent, size }), className)
 
-    return Boolean(href) ?
-        <Link className={classes} href={href!} {...props as Omit<LinkProps, "href">} />
+    return !!href ?
+        <Link className={classes} href={href} {...props as Omit<LinkProps, "href">} />
         :
         <button className={classes} {...props} />
 }
