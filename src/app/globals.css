@@ -4,36 +4,36 @@
 
 @layer base {
   h1 {
-    @apply text-5xl leading-[3.5rem] -tracking-widest;
+    @apply text-5xl leading-[3.5rem] -tracking-widest text-secondary-600;
   }
 
   h2 {
-    @apply text-4xl leading-[3rem] -tracking-widest;
+    @apply text-4xl leading-[3rem] -tracking-widest text-secondary-600;
   }
 
   h3 {
-    @apply text-[2rem] leading-10 tracking-normal;
+    @apply text-[2rem] leading-10 tracking-normal text-secondary-600;
   }
 
   h4 {
-    @apply text-2xl leading-8 tracking-normal;
+    @apply text-2xl leading-8 tracking-normal text-secondary-600;
   }
 
   h5 {
-    @apply text-base leading-6 tracking-normal;
+    @apply text-xl leading-6 tracking-normal text-secondary-600;
   }
 
   p {
-    @apply text-xl leading-6 tracking-normal;
+    @apply text-base leading-6 tracking-normal text-secondary-600;
   }
 }
 
 @layer components {
   .label {
-    @apply text-sm leading-4 tracking-normal;
+    @apply text-sm leading-4 tracking-normal text-secondary-600;
   }
 
   .small-label {
-    @apply text-xs leading-[14px] tracking-normal;
+    @apply text-xs leading-[14px] tracking-normal text-secondary-600;
   }
 }

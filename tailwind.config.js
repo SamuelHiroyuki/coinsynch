@@ -8,6 +8,14 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    screens: {
+      sm: '320px',
+      md: '768px',
+      xl: '1440px',
+    },
+    container: {
+      center: true
+    },
     colors: {
       base: "#5D6670",
       white: "#FFFFFF",
@@ -57,7 +65,27 @@ module.exports = {
         900: '#3B0C0E',
       },
     },
+    boxShadow: {
+      DEFAULT: '0px 4px 8px rgba(77, 77, 77, 0.1)',
+      top: "0px 4px 8px rgba(77, 77, 77, 0.1), 0px -4px 8px rgba(77, 77, 77, 0.1)",
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          '@screen sm': {
+            maxWidth: '272px',
+          },
+          '@screen md': {
+            maxWidth: '672px',
+          },
+          '@screen xl': {
+            maxWidth: '1216px',
+          },
+        }
+      })
+    }
+  ],
 }
