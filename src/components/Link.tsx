@@ -1,15 +1,13 @@
-import { cva, VariantProps, cx } from "class-variance-authority";
+import { cx } from "class-variance-authority";
 import NextLink, { LinkProps } from "next/link";
 
-const styles = cva("label text-base")
-
-interface Props extends LinkProps, VariantProps<typeof styles> {
+interface Props extends LinkProps {
     children?: React.ReactNode
     className?: string
 }
 
 export function Link({ className, ...props }: Props) {
     return (
-        <NextLink className={cx(styles(), className)} {...props} />
+        <NextLink className={cx("label", className)} {...props} />
     )
 }
