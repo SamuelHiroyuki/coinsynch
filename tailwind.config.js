@@ -74,7 +74,18 @@ module.exports = {
         fancy: "0px 12px 24px rgba(0, 0, 0, 0.05)",
       },
       backgroundImage: {
-        'white-contrast': "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #F7F7F7 100%);"
+        'lg-white-contrast': "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #F7F7F7 100%)",
+        'lg-primary': "linear-gradient(97.85deg, #FBAB34 -5.87%, #AD721A 118.06%)",
+      },
+      keyframes: {
+        float: {
+          '0%': { transform: 'translatey(0px)' },
+          '50%': { transform: 'translatey(-10px)' },
+          '100%': { transform: 'translatey(0px)' },
+        }
+      },
+      animation: {
+        float: 'float 4s ease-in-out infinite',
       }
     },
   },

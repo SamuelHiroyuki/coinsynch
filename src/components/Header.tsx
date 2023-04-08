@@ -1,10 +1,11 @@
+import { cx } from 'class-variance-authority'
 import Image from 'next/image'
 import { Button } from './Button'
 import { Link } from './Link'
 
-export function Header() {
+export function Header({ hideShadow = false }: { hideShadow?: boolean }) {
     return (
-        <header className="shadow h-16">
+        <header className={cx("h-16 sticky top-0 bg-white", !hideShadow ? "shadow" : "")}>
             <div className="transition-[max-width] ease-out h-full container flex items-center gap-6 max-sm:px-6">
                 <Image
                     src="/brand.svg"
