@@ -26,6 +26,16 @@ export default function Home() {
             <h5 className="chip">Games</h5>
           </div>
         </div>
+
+        <div className="absolute top-36 right-0">
+          <Carousel
+            items={[
+              { image: "/woman.svg", icons: ["/bitcoin.svg", "/increase-chart.svg"] },
+              { image: "/man.svg", icons: ["/laptop-mobile.svg", "/nft.svg"] },
+              { image: "/woman2.svg", icons: ["/bitcoin.svg", "/increase-chart.svg"] },
+            ]}
+          />
+        </div>
       </Container>
 
       <div className='w-full h-64'>
