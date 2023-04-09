@@ -4,11 +4,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { cx } from "class-variance-authority";
 import { debounce } from "@/utils/debounce";
+import { Icon, Icons } from "./Icon";
 
 interface Props {
     items: Array<{
         image: string
-        icons?: [string?, string?]
+        icons?: [Icons?, Icons?]
     }>
 }
 
@@ -57,7 +58,7 @@ export const Carousel = ({ items }: Props) => {
                 style={{ transform: `translateX(-${steps[currentIndex]}px)` }}
             >
                 {items.map((item, index) => (
-                    <div key={index} className="relative" style={CAROUSEL_SIZE}>
+                    <div key={index} className={cx("relative", currentIndex !== index ? "opacity-50" : "opacity-100")} style={CAROUSEL_SIZE}>
                         <Image
                             src={item.image}
                             alt=""
@@ -70,11 +71,10 @@ export const Carousel = ({ items }: Props) => {
                                 className="animate-float flex items-center justify-center absolute w-20 h-20 bg-primary-100 rounded-lg top-20 -left-10"
                                 style={{ animationDuration: `${Math.floor(Math.random() * (MAX_DELAY - MIN_DELAY + 1)) + MIN_DELAY}s` }}
                             >
-                                <Image
-                                    src={item.icons[0]}
-                                    alt=""
-                                    width={64}
-                                    height={64}
+                                <Icon
+                                    name={item.icons[0]}
+                                    size="lg"
+                                    className="fill-primary-500"
                                 />
                             </div>
                         )}
@@ -83,11 +83,10 @@ export const Carousel = ({ items }: Props) => {
                                 className="animate-float animate flex items-center justify-center absolute w-20 h-20 bg-primary-100 rounded-lg top-80 -right-10"
                                 style={{ animationDuration: `${Math.floor(Math.random() * (MAX_DELAY - MIN_DELAY + 1)) + MIN_DELAY}s` }}
                             >
-                                <Image
-                                    src={item.icons[1]}
-                                    alt=""
-                                    width={64}
-                                    height={64}
+                                <Icon
+                                    name={item.icons[1]}
+                                    size="lg"
+                                    className="fill-primary-500"
                                 />
                             </div>
                         )}

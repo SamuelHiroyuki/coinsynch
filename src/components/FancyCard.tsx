@@ -1,9 +1,9 @@
 import { ComponentProps } from "react";
 import { cx } from "class-variance-authority";
-import Image from "next/image";
+import { Icon, Icons } from "./Icon";
 
 interface Props extends ComponentProps<'div'> {
-    iconName?: string
+    iconName?: Icons
     title: string
     subtitle: string
     text: string
@@ -19,11 +19,10 @@ export function FancyCard({ iconName, title, subtitle, text, className, ...props
             {...props}
         >
             {!!iconName && (
-                <Image
-                    src={`/${iconName}.svg`}
-                    alt={iconName}
-                    width={64}
-                    height={64}
+                <Icon
+                    name={iconName}
+                    className="fill-primary-500"
+                    size="lg"
                 />
             )}
 

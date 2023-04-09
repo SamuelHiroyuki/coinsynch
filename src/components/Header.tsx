@@ -5,7 +5,7 @@ import { Link } from './Link'
 
 export function Header({ hideShadow = false }: { hideShadow?: boolean }) {
     return (
-        <header className={cx("h-16 sticky top-0 bg-white", !hideShadow ? "shadow" : "")}>
+        <header className={cx("h-16 sticky top-0 bg-white z-20", !hideShadow ? "shadow" : "")}>
             <div className="transition-[max-width] ease-out h-full container flex items-center gap-6 max-sm:px-6">
                 <Image
                     src="/brand.svg"

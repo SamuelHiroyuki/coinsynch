@@ -20,6 +20,7 @@ module.exports = {
       default: "#5D6670",
       white: "#FFFFFF",
       black: "#000000",
+      transparent: "transparent",
       primary: {
         100: '#FFF6E8',
         200: '#FFE1B5',
