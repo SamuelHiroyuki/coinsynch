@@ -23,7 +23,7 @@ export function Header({ hideShadow = false }: { hideShadow?: boolean }) {
                 </nav>
                 <Link href="#" className='md:hidden ml-auto'>
                     <Image
-                        src="/h-menu.svg"
+                        src="/icons/h-menu.svg"
                         alt="menu"
                         width={24}
                         height={24}

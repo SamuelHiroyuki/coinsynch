@@ -1,9 +1,9 @@
 import { ComponentProps } from "react";
 import { cx } from "class-variance-authority";
-import { Icon, Icons } from "./Icon";
+import { Icon, IconName } from "./Icon";
 
 interface Props extends ComponentProps<'div'> {
-    iconName?: Icons
+    iconName?: IconName
     title: string
     subtitle: string
     text: string
@@ -13,7 +13,7 @@ export function FancyCard({ iconName, title, subtitle, text, className, ...props
     return (
         <div
             className={cx(
-                "p-6 flex flex-col gap-4 bg-white rounded-md w-[280px] h-[268px] shadow-fancy",
+                "p-6 flex flex-col gap-4 flex-shrink-0 bg-white rounded-md md:w-[280px] sm:w-[200px] h-[268px] shadow-fancy",
                 className
             )}
             {...props}
@@ -21,16 +21,15 @@ export function FancyCard({ iconName, title, subtitle, text, className, ...props
             {!!iconName && (
                 <Icon
                     name={iconName}
-                    className="fill-primary-500"
-                    size="lg"
+                    className="fill-primary-500 w-16 h-16"
                 />
             )}
 
             <div className="flex-1">
-                <p className="text-primary-500 font-bold mb-1">{title}</p>
-                <h4 className="font-bold">{subtitle}</h4>
+                <p className="p sm:label !text-primary-500 !font-bold mb-1">{title}</p>
+                <h4 className="h4 sm:h5 !font-bold">{subtitle}</h4>
                 <p className={cx(
-                    "label-paragraph mt-2",
+                    "label mt-2",
                     !!iconName ? "line-clamp-3" : "line-clamp-6"
                 )}>
                     {text}

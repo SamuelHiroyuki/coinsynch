@@ -4,31 +4,55 @@
 
 @layer base {
   h1 {
-    @apply text-5xl leading-[3.5rem] tracking-normal text-default;
+    @apply h1;
   }
 
   h2 {
-    @apply text-[2.5rem] leading-[3rem] tracking-normal text-default;
+    @apply h2;
   }
 
   h3 {
-    @apply text-[2rem] leading-10 tracking-normal text-default;
+    @apply h3;
   }
 
   h4 {
-    @apply text-2xl leading-8 tracking-normal text-default;
+    @apply h4;
   }
 
   h5 {
-    @apply text-xl leading-6 tracking-normal text-default;
+    @apply h5;
   }
 
   p {
-    @apply text-base leading-6 tracking-normal text-default;
+    @apply p;
   }
 }
 
 @layer components {
+  .h1 {
+    @apply text-5xl leading-[3.5rem] tracking-normal text-default;
+  }
+
+  .h2 {
+    @apply text-[2.5rem] leading-[3rem] tracking-normal text-default;
+  }
+
+  .h3 {
+    @apply text-[2rem] leading-10 tracking-normal text-default;
+  }
+
+  .h4 {
+    @apply text-2xl leading-8 tracking-normal text-default;
+  }
+
+  .h5 {
+    @apply text-xl leading-6 tracking-normal text-default;
+  }
+
+  .p {
+    @apply text-base leading-6 tracking-normal text-default;
+  }
+
   .label {
     @apply text-sm leading-4 tracking-normal text-default;
   }
@@ -38,6 +62,15 @@
   }
 
   .chip {
-    @apply w-fit px-4 py-1 rounded text-primary-500 bg-primary-100;
+    @apply w-fit px-4 py-1 rounded !text-primary-500 !bg-primary-100;
+  }
+
+  .scroll-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 }

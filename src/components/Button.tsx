@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
 import { cva, VariantProps, cx } from "class-variance-authority";
 import Link, { LinkProps } from "next/link";
-import { Icon, Icons } from "./Icon";
+import { Icon, IconName } from "./Icon";
 
 const styles = cva("px-6 label flex items-center justify-center gap-2", {
     variants: {
@@ -55,8 +55,8 @@ const iconStyles = cva("", {
 type ButtonOrLinkProps = ComponentProps<'button'> & Partial<LinkProps>;
 
 interface Props extends ButtonOrLinkProps, VariantProps<typeof styles> {
-    prefix?: Icons
-    suffix?: Icons
+    prefix?: IconName
+    suffix?: IconName
 }
 
 export function Button({
@@ -74,9 +74,9 @@ export function Button({
 
     const content = (
         <>
-            {!!prefix && <Icon size="xs" className={iconStyles({ intent, variant })} name={prefix} />}
+            {!!prefix && <Icon className={cx(iconStyles({ intent, variant }), "w-3 h-3")} name={prefix} />}
             {children}
-            {!!suffix && <Icon size="xs" className={iconStyles({ intent, variant })} name={suffix} />}
+            {!!suffix && <Icon className={cx(iconStyles({ intent, variant }), "w-3 h-3")} name={suffix} />}
         </>
     )
 
