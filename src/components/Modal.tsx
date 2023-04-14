@@ -21,8 +21,6 @@ const Modal = ({ header, children, pathToReturn }: Props) => {
     }, [router, pathToReturn]);
 
     const onClick = useCallback((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        event.preventDefault();
-
         if (
             event.target === overlayRef.current ||
             event.target === containerRef.current

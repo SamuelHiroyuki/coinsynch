@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { userDbStore } from "@/stores/usersDb";
 
 const schema = yup.object({
     email: yup.string().email("Email must be a valid email").required("Email is required!"),
@@ -20,24 +20,25 @@ type FormData = yup.InferType<typeof schema>
 
 const SignInModal = ({ pathToReturn }: { pathToReturn?: string }) => {
     const [error, setError] = useState("")
-    const router = useRouter()
+    const users = userDbStore(store => store.users)
     const { register, handleSubmit, formState: { errors, isValid, isSubmitting } } = useForm<FormData>({
         resolver: yupResolver(schema),
         mode: "all"
     });
 
     const onSubmit = async (data: FormData) => {
-        const response = await signIn("credentials", {
-            redirect: false,
-            email: data.email,
-            password: data.password,
-        })
+        const user = users.find(user => user.email === data.email)
 
-        if (!!response?.error) {
-            setError(response.error)
-        } else {
-            router.push("/dashboard")
+        if (user && user.password === data.password) {
+            await signIn("credentials", {
+                redirect: true,
+                callbackUrl: "/dashboard",
+                ...user,
+            })
+            return
         }
+
+        setError("User not found!")
     }
 
     return (
@@ -56,6 +57,7 @@ const SignInModal = ({ pathToReturn }: { pathToReturn?: string }) => {
                     prefix="lock"
                     variant="sm"
                     type="password"
+                    errorText={errors.password?.message}
                 />
 
                 <div className="relative">
@@ -69,7 +71,7 @@ const SignInModal = ({ pathToReturn }: { pathToReturn?: string }) => {
                         className="w-full mt-5">Sign in</Button>
                 </div>
 
-                <Link href="#" className="sm:small-label xl:label mx-auto mt-6">Don’t have an account? <span className="font-bold">Sign up to</span> <span className="text-primary-500 font-bold">Coin</span><span className="text-secondary-500 font-bold">Synch</span></Link>
+                <Link href="/signup" className="sm:small-label xl:label mx-auto mt-6">Don’t have an account? <span className="font-bold">Sign up to</span> <span className="text-primary-500 font-bold">Coin</span><span className="text-secondary-500 font-bold">Synch</span></Link>
             </form>
 
         </Modal>
