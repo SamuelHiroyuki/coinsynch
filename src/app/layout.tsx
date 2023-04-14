@@ -1,6 +1,7 @@
 import './globals.css'
 
 import { Roboto } from "next/font/google"
+import Providers from './providers'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -16,12 +17,19 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  modal
 }: {
   children: React.ReactNode
+  modal: React.ReactNode
 }) {
   return (
     <html lang="en" className={roboto.className}>
-      <body>{children}</body>
+      <body>
+        <Providers>
+          {children}
+          {modal}
+        </Providers>
+      </body>
     </html>
   )
 }

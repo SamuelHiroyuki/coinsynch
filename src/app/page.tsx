@@ -1,11 +1,11 @@
-import { Button } from "@/components/Button";
-import { Carousel } from "@/components/Carousel";
+import Button from "@/components/Button";
+import Carousel from "@/components/Carousel";
 import { Container } from "@/components/Container";
 import { FancyCard } from "@/components/FancyCard";
 import { Footer } from "@/components/Footer";
 import { FormLabel } from "@/components/FormLabel";
 import { Header } from "@/components/Header";
-import { Input } from "@/components/Input";
+import Input from "@/components/Input";
 import { cx } from "class-variance-authority";
 import Image from "next/image";
 
@@ -16,8 +16,8 @@ export default function Home() {
 
       <Container className="sm:mt-10">
         <div className="xl:col-span-6 md:col-span-4 sm:col-span-4 flex flex-col gap-6 xl:pt-40 xl:pb-16 md:pt-16">
-          <h1 className="xl:h1 md:h3 sm:h5 sm:text-center !font-bold !text-primary-500">Lorem ipsum dolor sit amet, consectetur</h1>
-          <h5 className="xl:h5 md:p sm:label sm:text-center !text-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</h5>
+          <h1 className="xl:h1 md:h3 sm:h5 sm:text-center md:text-start !font-bold !text-primary-500">Lorem ipsum dolor sit amet, consectetur</h1>
+          <h5 className="xl:h5 md:p sm:label sm:text-center md:text-start !text-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</h5>
           <Button className="xl:w-1/2 md:w-3/4 mt-2 xl:mb-14 mb-5" suffix="arrow-right">
             SIGN UP NOW
           </Button>
@@ -41,7 +41,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="bg-lg-white-contrast w-full sm:mt-14">
+      <div id="about" className="bg-lg-white-contrast w-full sm:mt-14">
         <Container className="xl:py-32 md:py-20 md:gap-10">
           <div className="xl:col-span-7 md:col-span-8 sm:col-span-4 sm:mb-14 flex md:flex-wrap overflow-x-auto scroll-hidden gap-8 xl:order-1 order-2">
             <FancyCard
@@ -80,7 +80,7 @@ export default function Home() {
         </Container>
       </div>
 
-      <Container className="md:py-32 sm:py-14">
+      <Container id="top-cryptos" className="md:py-32 sm:py-14">
         <h3 className="sm:h5 md:h3 col-span-full text-center !font-bold mb-12">Top Cryptos</h3>
         <table className="col-span-full">
           <thead className="after:content-['\200C'] after:leading-[8px] after:block">
@@ -103,6 +103,20 @@ export default function Home() {
                 <Button className="sm:flex md:hidden !p-0" suffix="arrow-down" variant="text" intent="primary" size="sm" />
               </td>
             </tr>
+            {/* <tr className="border-t-2 border-secondary-200">
+              <td colSpan={2}>
+                <div className="flex flex-col p-4 gap-4">
+                  <div className="flex justify-between ">
+                    <span className="small-label text-secondary-500">Price</span>
+                    <p className="label">US$ 25.499,52</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="small-label text-secondary-500">Price</span>
+                    <p className={cx("label", true ? "text-tertiary-700" : "text-quartenary-700")}>+1.23%</p>
+                  </div>
+                </div>
+              </td>
+            </tr> */}
           </tbody>
         </table>
         <Button variant="text" className="sm:col-span-4 md:col-span-2 xl:col-start-6 sm:col-start-1 md:col-start-4" suffix="plus">View more</Button>

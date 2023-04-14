@@ -27,7 +27,7 @@ const ITEMS: Items[] = [
     { image: "/woman2.svg", icons: ["bitcoin", "increase-chart"] },
 ]
 
-export const Carousel = () => {
+const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -103,3 +103,5 @@ export const Carousel = () => {
         </div>
     );
 };
+
+export default Carousel

@@ -10,6 +10,12 @@ export type IconName =
     "legal-scale" |
     "plus" |
     "arrow-down" |
+    "user" |
+    "lock" |
+    "email" |
+    "eye" |
+    "eye-not" |
+    "loading" |
     "wallet"
 
 interface Props extends Omit<ImageProps, "src" | "alt" | "width" | "height"> {
