@@ -3,12 +3,11 @@ import Carousel from "@/components/Carousel";
 import { Container } from "@/components/Container";
 import { FancyCard } from "@/components/FancyCard";
 import { Footer } from "@/components/Footer";
-import { FormLabel } from "@/components/FormLabel";
 import { Header } from "@/components/Header";
-import Input from "@/components/Input";
 import TopCryptosTable from "@/components/TopCryptosTable";
 import Image from "next/image";
 import { Suspense } from "react";
+import Newsletter from "./(ui)/Newsletter";
 
 export default function Home() {
   return (
@@ -95,27 +94,7 @@ export default function Home() {
         </Suspense>
       </Container>
 
-      <div className="bg-lg-primary relative sm:py-6 md:py-32">
-        <Container className="relative z-10 sm:gap-10">
-          <div className="col-span-4 xl:col-start-2">
-            <h4 className="sm:p md:h4 !font-bold !text-primary-200 mb-1">Lorem ipsum</h4>
-            <h2 className="sm:h4 md:h2 !font-bold !text-white">Lorem ipsum</h2>
-            <p className="sm:label md:p mt-4 !text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</p>
-          </div>
-          <div className="col-span-4 xl:col-end-12">
-            <FormLabel label="Teste" twColor="text-white">
-              <Input placeholder="Email" />
-            </FormLabel>
-            <Button className="w-full">Subscribe</Button>
-          </div>
-        </Container>
-        <Image
-          src="/waves2.svg"
-          alt="waves"
-          fill
-          className="object-cover object-center z-0"
-        />
-      </div>
+      <Newsletter />
 
       <Footer />
     </main>
