@@ -2,6 +2,7 @@ import { cx } from 'class-variance-authority'
 import Image from 'next/image'
 import Button from './Button'
 import Link from 'next/link'
+import { TopCoinsCarousel } from './TopCoinsCarousel'
 
 export function Header({ hideShadow = false }: { hideShadow?: boolean }) {
     return (
@@ -15,11 +16,15 @@ export function Header({ hideShadow = false }: { hideShadow?: boolean }) {
                     priority
                     className='mr-4'
                 />
-                <nav className='flex-1 items-center flex gap-6 max-md:hidden'>
-                    <Link className="label" href="#about">About us</Link>
-                    <Link className="label" href="#top-cryptos">Top Cryptos</Link>
-                    <Link className="label ml-auto" href="/signin">Sign in</Link>
-                    <Button size="sm" href="/signup">Sign up</Button>
+                <nav className='flex-1 items-center flex gap-6'>
+                    <Link className="max-md:hidden label" href="#about">About us</Link>
+                    <Link className="max-md:hidden label mr-auto" href="#top-cryptos">Top Cryptos</Link>
+                    <div className='xl:static max-xl:bg-white max-xl:absolute max-xl:top-16 max-xl:left-0 max-xl:right-0 max-xl:w-full max-xl:flex max-xl:items-center max-xl:justify-center max-xl:h-9 max-xl:border-b max-xl:border-t max-xl:border-secondary-200'>
+                        {/* @ts-expect-error Async Server Component */}
+                        <TopCoinsCarousel />
+                    </div>
+                    <Link className="max-md:hidden label" href="/signin">Sign in</Link>
+                    <Button size="sm" href="/signup" className='max-md:hidden'>Sign up</Button>
                 </nav>
                 <Link href="#" className='md:hidden ml-auto'>
                     <Image

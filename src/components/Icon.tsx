@@ -16,6 +16,7 @@ export type IconName =
     "eye" |
     "eye-not" |
     "loading" |
+    "minus" |
     "wallet"
 
 interface Props extends Omit<ImageProps, "src" | "alt" | "width" | "height"> {

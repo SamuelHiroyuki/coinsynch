@@ -20,17 +20,17 @@ const styles = cva("px-6 label flex items-center justify-center gap-2 transition
             contained: "text-white rounded-3xl",
         },
         disabled: {
-            true: "bg-secondary-500/50",
+            true: "bg-secondary-500/50 hover:bg-secondary-500/50",
         },
         loading: {
-            true: "bg-secondary-500/50",
+            true: "bg-secondary-500/50 hover:bg-secondary-500/50",
         }
     },
     compoundVariants: [
-        { variant: "text", intent: "primary", class: "text-primary-500" },
-        { variant: "text", intent: "tertiary", class: "text-tertiary-700" },
-        { variant: "contained", intent: "primary", class: "bg-primary-500" },
-        { variant: "contained", intent: "tertiary", class: "bg-tertiary-700" },
+        { variant: "text", intent: "primary", class: "text-primary-500 hover:bg-primary-100 rounded" },
+        { variant: "text", intent: "tertiary", class: "text-tertiary-700 hover:bg-tertiary-100 rounded" },
+        { variant: "contained", intent: "primary", class: "bg-primary-500 hover:bg-primary-600" },
+        { variant: "contained", intent: "tertiary", class: "bg-tertiary-700 hover:bg-tertiary-800" },
     ],
     defaultVariants: {
         variant: "contained",

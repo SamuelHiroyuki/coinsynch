@@ -6,15 +6,16 @@ import { Footer } from "@/components/Footer";
 import { FormLabel } from "@/components/FormLabel";
 import { Header } from "@/components/Header";
 import Input from "@/components/Input";
-import { cx } from "class-variance-authority";
+import TopCryptosTable from "@/components/TopCryptosTable";
 import Image from "next/image";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header hideShadow />
 
-      <Container className="sm:mt-10">
+      <Container className="sm:mt-16">
         <div className="xl:col-span-6 md:col-span-4 sm:col-span-4 flex flex-col gap-6 xl:pt-40 xl:pb-16 md:pt-16">
           <h1 className="xl:h1 md:h3 sm:h5 sm:text-center md:text-start !font-bold !text-primary-500">Lorem ipsum dolor sit amet, consectetur</h1>
           <h5 className="xl:h5 md:p sm:label sm:text-center md:text-start !text-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</h5>
@@ -82,44 +83,16 @@ export default function Home() {
 
       <Container id="top-cryptos" className="md:py-32 sm:py-14">
         <h3 className="sm:h5 md:h3 col-span-full text-center !font-bold mb-12">Top Cryptos</h3>
-        <table className="col-span-full">
-          <thead className="after:content-['\200C'] after:leading-[8px] after:block">
-            <tr>
-              <th className="sm:hidden md:table-cell label text-left pl-4 font-normal w-[15%]">#</th>
-              <th className="label text-left pl-4 font-normal sm:w-[75%] md:w-[30%]">Crypto</th>
-              <th className="sm:hidden md:table-cell label text-left pl-4 font-normal w-[25%]">Price</th>
-              <th className="sm:hidden md:table-cell label text-left pl-4 font-normal w-[20%]">Change</th>
-              <th className="label text-left pl-4 font-normal sm:w-[25%] md:w-[10%]">Trade</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="odd:bg-white even:bg-secondary-100">
-              <td className="sm:hidden md:table-cell p-4 text-base leading-6 tracking-normal text-default">1</td>
-              <td className="p-4 text-base leading-6 tracking-normal text-default">Bitcoin</td>
-              <td className="sm:hidden md:table-cell p-4 text-base leading-6 tracking-normal text-default">$59,678.22</td>
-              <td className={cx("sm:hidden md:table-cell p-4 text-base leading-6 tracking-normal text-default", true ? "text-tertiary-700" : "text-quartenary-700")}>+1.23%</td>
-              <td className="p-4 text-base leading-6 tracking-normal text-default" align="right">
-                <Button className="sm:hidden md:flex" intent="tertiary" size="sm">Buy</Button>
-                <Button className="sm:flex md:hidden !p-0" suffix="arrow-down" variant="text" intent="primary" size="sm" />
-              </td>
-            </tr>
-            {/* <tr className="border-t-2 border-secondary-200">
-              <td colSpan={2}>
-                <div className="flex flex-col p-4 gap-4">
-                  <div className="flex justify-between ">
-                    <span className="small-label text-secondary-500">Price</span>
-                    <p className="label">US$ 25.499,52</p>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="small-label text-secondary-500">Price</span>
-                    <p className={cx("label", true ? "text-tertiary-700" : "text-quartenary-700")}>+1.23%</p>
-                  </div>
-                </div>
-              </td>
-            </tr> */}
-          </tbody>
-        </table>
-        <Button variant="text" className="sm:col-span-4 md:col-span-2 xl:col-start-6 sm:col-start-1 md:col-start-4" suffix="plus">View more</Button>
+        <Suspense fallback={
+          <div className="col-span-full flex flex-col gap-14">
+            <div className="animate-pulse rounded w-full h-14 bg-secondary-200"></div>
+            <div className="animate-pulse rounded w-full h-14 bg-secondary-200"></div>
+            <div className="animate-pulse rounded w-full h-14 bg-secondary-200"></div>
+          </div>
+        }>
+          {/* @ts-expect-error Async Server Component */}
+          <TopCryptosTable />
+        </Suspense>
       </Container>
 
       <div className="bg-lg-primary relative sm:py-6 md:py-32">

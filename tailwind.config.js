@@ -71,6 +71,9 @@ module.exports = {
       top: "0px -4px 8px rgba(77, 77, 77, 0.1)",
     },
     extend: {
+      transitionProperty: {
+        expand: 'height padding margin .5s ease',
+      },
       boxShadow: {
         fancy: "0px 12px 24px rgba(0, 0, 0, 0.05)",
       },
@@ -83,10 +86,19 @@ module.exports = {
           '0%': { transform: 'translatey(0px)' },
           '50%': { transform: 'translatey(-10px)' },
           '100%': { transform: 'translatey(0px)' },
+        },
+        "scrolling": {
+          from: {
+            transform: "translateX(64%)"
+          },
+          to: {
+            transform: "translateX(-64%)"
+          }
         }
       },
       animation: {
         float: 'float 4s ease-in-out infinite',
+        'scrolling': 'scrolling 40s linear infinite',
       },
       scale: {
         25: '.25',

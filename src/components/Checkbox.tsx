@@ -1,7 +1,6 @@
 "use client"
 
 import { ComponentProps, forwardRef, useMemo, useState } from "react";
-import { cva, VariantProps, cx } from "class-variance-authority";
 
 interface Props extends Omit<ComponentProps<'input'>, "type"> {
     label?: React.ReactNode
@@ -22,7 +21,7 @@ const Checkbox = forwardRef<HTMLInputElement, Props>(({
             <div className="flex items-start gap-4">
                 <input
                     ref={ref}
-                    className="w-6 h-6 rounded accent-primary-500 outline-primary-500 border-primary-500 border"
+                    className="w-6 h-6 rounded accent-primary-500 outline-primary-500 !border-primary-500 border"
                     type="checkbox"
                     {...props}
                     id={id}
