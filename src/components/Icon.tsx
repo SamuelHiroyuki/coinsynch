@@ -14,9 +14,13 @@ export type IconName =
     "lock" |
     "email" |
     "eye" |
+    "h-menu" |
     "eye-not" |
     "loading" |
     "minus" |
+    "door-out" |
+    "arrow-up" |
+    "arrow-back" |
     "wallet"
 
 interface Props extends Omit<ImageProps, "src" | "alt" | "width" | "height"> {

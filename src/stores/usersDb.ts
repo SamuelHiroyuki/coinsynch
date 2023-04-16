@@ -9,6 +9,7 @@ export interface User {
     name: string
     email: string
     password: string
+    image: string
 }
 
 interface UsersState {
@@ -18,7 +19,7 @@ interface UsersState {
 
 export const userDbStore = create<UsersState>()(persist(
     (set, get) => ({
-        users: [{ id: uuid(), name: 'Teste', email: "teste@teste.com", password: "123" }],
+        users: [{ id: uuid(), image: "/menu-user.avif", name: 'Teste', email: "teste@teste.com", password: "123" }],
         addUser: (user: Omit<User, "id">) => {
             const exists = get().users.find(u => u.email === user.email)
 

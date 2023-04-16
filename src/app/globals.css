@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --carousel-width: 0;
-}
-
 @layer base {
   h1 {
     @apply h1;
@@ -76,5 +72,9 @@
   .scroll-hidden {
     scrollbar-width: none;
     -ms-overflow-style: none;
+  }
+
+  div:has(.dropsown--menu__content) {
+    z-index: 100 !important;
   }
 }

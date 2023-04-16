@@ -2,7 +2,7 @@ import { withAuth } from "next-auth/middleware"
 import { NextResponse } from "next/server"
 
 const PROTECTED_ROUTES: string[] = ["/dashboard"]
-const GUEST_ROUTES: string[] = ["/signin"]
+const GUEST_ROUTES: string[] = ["/signin", "/signup"]
 
 export default withAuth(
     function middleware(req) {
@@ -30,5 +30,5 @@ export default withAuth(
 )
 
 export const config = {
-    matcher: ["/dashboard", "/signin"]
+    matcher: ["/dashboard", "/signin", "/signup"]
 }

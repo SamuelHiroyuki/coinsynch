@@ -71,7 +71,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="xl:col-span-4 md:col-span-6 sm:col-span-4 md:col-start-2 self-center xl:order-2 order-1">
+          <div className="xl:col-span-4 md:col-span-6 sm:col-span-4 md:col-start-2 self-center xl:order-2 order-1 max-xl:mb-10">
             <h5 className="xl:h5 md:p !font-bold !text-primary-500 mb-1">Lorem ipsum</h5>
             <h2 className="xl:h2 md:h3 !font-bold">Lorem ipsum</h2>
             <p className="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</p>

@@ -40,7 +40,8 @@ const SignUpModal = ({ pathToReturn }: { pathToReturn?: string }) => {
             addUser({
                 email: data.email,
                 name: data.name,
-                password: data.password
+                password: data.password,
+                image: "/menu-user.avif"
             })
             router.push("/signin")
         } catch (error) {

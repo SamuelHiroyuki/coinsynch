@@ -69,6 +69,7 @@ module.exports = {
     boxShadow: {
       DEFAULT: '0px 4px 8px rgba(77, 77, 77, 0.1)',
       top: "0px -4px 8px rgba(77, 77, 77, 0.1)",
+      menu: "0px 0px 10px rgba(0, 0, 0, 0.05)"
     },
     extend: {
       transitionProperty: {
