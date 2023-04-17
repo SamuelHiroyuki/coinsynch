@@ -23,6 +23,8 @@
 > Sua ausência vai gerar um erro conforme [documentação](https://next-auth.js.org/configuration/options#secret).
 > Em cenários reais ela não deve ser commitada no repositório.
 
+> O redirect dentro do middleware do Nextjs parece estar com problemas quando o deploy é feito na Vercel.
+> A aplicação funciona corretamente quando iniciada em ambiente local com com comandos de `dev` e `build`+`start`
 
 <br />
 
