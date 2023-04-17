@@ -8,17 +8,30 @@ import { useRouter } from "next/navigation";
 interface Props extends ComponentProps<"div"> {
     header: React.ReactNode
     pathToReturn?: string
+    onDismiss?(): void
+    isOpen?: boolean
 }
 
-const Modal = ({ header, children, pathToReturn }: Props) => {
+const Modal = ({
+    isOpen = true,
+    header,
+    children,
+    pathToReturn,
+    onDismiss: _onDismiss
+}: Props) => {
     const overlayRef = useRef<HTMLDivElement | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const router = useRouter();
 
     const onDismiss = useCallback(() => {
+        if (_onDismiss) {
+            _onDismiss()
+            return
+        }
+
         if (pathToReturn) router.push(pathToReturn);
         else router.back()
-    }, [router, pathToReturn]);
+    }, [router, pathToReturn, _onDismiss]);
 
     const onClick = useCallback((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (
@@ -35,6 +48,8 @@ const Modal = ({ header, children, pathToReturn }: Props) => {
         document.addEventListener("keydown", onKeyDown);
         return () => document.removeEventListener("keydown", onKeyDown);
     }, [onKeyDown]);
+
+    if (!isOpen) return <></>
 
     return (
         <div

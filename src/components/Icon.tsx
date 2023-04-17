@@ -15,6 +15,7 @@ export type IconName =
     "email" |
     "eye" |
     "h-menu" |
+    "exchange" |
     "eye-not" |
     "loading" |
     "minus" |

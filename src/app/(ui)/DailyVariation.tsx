@@ -1,3 +1,5 @@
+"use client"
+
 import { PillCard } from "@/components/PillCard";
 import { cx } from "class-variance-authority";
 import Image from "next/image";
@@ -51,11 +53,11 @@ const DailyVariation = async ({ crypto }: { crypto: string }) => {
 
     return (
         <PillCard
-            className="col-span-3"
+            className="xl:col-span-3 md:col-span-4 sm:col-span-2 max-md:flex-col max-md:h-36"
             left={
-                <div className="flex flex-col p-2 min-w-[100px] gap-4">
-                    <p className="small-label text-center !text-secondary-500">Daily Variation</p>
-                    <div className="flex gap-2 flex-col">
+                <div className="flex flex-col p-2 min-w-[100px] gap-4 max-md:h-1/2">
+                    <p className="small-label md:text-center sm:text-start !text-secondary-500">Daily Variation</p>
+                    <div className="flex gap-2 md:flex-col">
                         <div className="flex gap-2 items-center justify-center">
                             <Image
                                 width={24}
@@ -79,7 +81,7 @@ const DailyVariation = async ({ crypto }: { crypto: string }) => {
                 </div>
             }
             right={
-                <div className="flex-1">
+                <div className="flex-1 max-md:h-1/2">
                     <ResponsiveContainer width="100%" height="100%">
                         <AreaChart
                             data={coin?.data}

@@ -20,6 +20,7 @@ module.exports = {
       default: "#5D6670",
       white: "#FFFFFF",
       black: "#000000",
+      grey: "#F9F9F9",
       transparent: "transparent",
       primary: {
         100: '#FFF6E8',
@@ -69,7 +70,10 @@ module.exports = {
     boxShadow: {
       DEFAULT: '0px 4px 8px rgba(77, 77, 77, 0.1)',
       top: "0px -4px 8px rgba(77, 77, 77, 0.1)",
-      menu: "0px 0px 10px rgba(0, 0, 0, 0.05)"
+      menu: "0px 0px 10px rgba(0, 0, 0, 0.05)",
+      card: "0px 8px 16px rgba(0, 0, 0, 0.1)",
+      select: "0px 0px 0px 1px #FBAB34",
+      none: "none",
     },
     extend: {
       transitionProperty: {

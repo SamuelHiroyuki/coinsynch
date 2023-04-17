@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { cx } from "class-variance-authority";
 
 interface Props {
     hideLogo?: boolean
@@ -7,8 +8,11 @@ interface Props {
 export function Footer({ hideLogo = false }: Props) {
     return (
         <footer className="shadow-top h-16">
-            <div className="transition-[max-width] ease-out h-full container flex justify-between max-md:justify-center items-center gap-6 max-sm:px-6">
-                <p className='max-md:hidden'>Copyright © 2022 -  All rights reserved</p>
+            <div className={cx(
+                "transition-[max-width] ease-out h-full container flex max-md:justify-center items-center gap-6 max-sm:px-6",
+                hideLogo ? "justify-center" : "justify-between"
+            )}>
+                <p className={cx(hideLogo ? "md:label sm:small-label" : "max-md:hidden")}>Copyright © 2022 -  All rights reserved</p>
                 {!hideLogo && (
                     <Image
                         src="/brand.svg"

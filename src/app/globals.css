@@ -77,4 +77,10 @@
   div:has(.dropsown--menu__content) {
     z-index: 100 !important;
   }
+
+  .input-number_hidden::-webkit-inner-spin-button,
+  .input-number_hidden::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }

@@ -8,7 +8,7 @@ interface Props extends ComponentProps<'div'> {
 
 export function PillCard({ left, right, className }: Props) {
     return (
-        <div className={cx("flex rounded-lg bg-white h-28", className)}>
+        <div className={cx("flex rounded-lg bg-white h-28 shadow-card overflow-hidden", className)}>
             {left}
             {right}
         </div>

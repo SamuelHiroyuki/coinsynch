@@ -34,9 +34,9 @@ export function DashboardHeader({ hideShadow = false }: { hideShadow?: boolean }
                     options={
                         <Item
                             onClick={() => signOut()}
-                            className="text-secondary-500 rounded flex items-center gap-4 px-2 outline-primary-500 hover:bg-primary-500 hover:text-white"
+                            className="text-secondary-500 group rounded flex items-center gap-4 px-2 outline-primary-500 hover:bg-primary-500 hover:text-white"
                         >
-                            <Icon name="door-out" className='w-4 h-4' /> Logout
+                            <Icon name="door-out" className='w-4 h-4 group-hover:invert group-hover:brightness-0 ' /> Logout
                         </Item>
                     }
                 >

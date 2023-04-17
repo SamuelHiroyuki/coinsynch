@@ -9,6 +9,8 @@ import { wallet } from "@/stores/wallet";
 import { Suspense, useMemo } from "react";
 import DailyVariation from "../(ui)/DailyVariation";
 import Image from "next/image";
+import { WalletTable } from "@/components/WalletTable";
+import { Footer } from "@/components/Footer";
 
 
 const Dashboard = () => {
@@ -19,7 +21,7 @@ const Dashboard = () => {
     }), [balance])
 
     return (
-        <main className="min-h-screen bg-secondary-200 flex flex-col">
+        <main className="min-h-screen sm:bg-white md:bg-grey flex flex-col">
             <DashboardHeader />
 
             <div className="flex flex-1">
@@ -28,44 +30,46 @@ const Dashboard = () => {
                 <div className="flex-1">
                     <Container className="xl:py-14 md:py-10 sm:py-6">
                         <PillCard
-                            className="col-span-6"
+                            className="xl:col-span-6 md:col-span-8 sm:col-span-4 xl:h-28 md:h-16 sm:h-12"
                             left={
-                                <div className="p-6 flex gap-4">
+                                <div className="xl:p-6 sm:px-4 sm:py-2 flex gap-4 items-center">
                                     <Icon
                                         name="legal-scale"
-                                        className="w-16 h-16 p-3 bg-primary-100 rounded-full"
+                                        className="xl:w-16 xl:h-16 xl:p-3 md:w-12 md:h-12 md:p-2 sm:w-8 sm:h-8 sm:p-1 bg-primary-100 rounded-full"
                                     />
                                     <div className="flex flex-col justify-center">
-                                        <h4>Balance in US$</h4>
-                                        <p className="text-secondary-500">(approximately)</p>
+                                        <h4 className="xl:h4 md:h5 md:inline sm:hidden">Balance in US$</h4>
+                                        <p className="xl:p md:label md:inline sm:hidden text-secondary-500">(approximately)</p>
+                                        <h4 className="md:hidden label">Balance</h4>
+                                        <p className="md:hidden small-label text-secondary-500">in US$</p>
                                     </div>
                                 </div>
                             }
                             right={
-                                <div className="flex-1 bg-primary-100 flex items-center justify-center ">
-                                    <h3 className="!font-bold">{formattedBalance}</h3>
+                                <div className="flex-1 bg-primary-100 flex items-center justify-center">
+                                    <h3 className="xl:h3 md:h4 sm:p !font-bold">{formattedBalance}</h3>
                                 </div>
                             }
                         />
 
                         <Suspense fallback={
-                            <div className="h-28 col-span-3 animate-pulse bg-primary-300 rounded-lg" />
+                            <div className="h-28 max-md:h-36 xl:col-span-3 md:col-span-4 sm:col-span-2 animate-pulse bg-primary-300 rounded-lg" />
                         }>
                             {/* @ts-expect-error Async Server Component */}
                             <DailyVariation crypto="ethereum" />
                         </Suspense>
 
                         <PillCard
-                            className="col-span-3"
+                            className="xl:col-span-3 md:col-span-4 sm:col-span-2  max-md:flex-col max-md:h-36"
                             left={
-                                <div className="w-1/2 p-4 flex flex-col gap-2">
+                                <div className="md:w-1/2 sm:w-full max-md:h-1/2 md:p-4 sm:p-2 flex flex-col gap-2">
                                     <p className="label !font-bold">NFT’s NEWS</p>
                                     <p className="small-label text-secondary-500">New ElephantX NFT to be lauched!</p>
-                                    <p className="small-label text-primary-500 mt-auto">Read more +</p>
+                                    <p className="max-md:hidden small-label text-primary-500 mt-auto">Read more +</p>
                                 </div>
                             }
                             right={
-                                <div className="w-1/2">
+                                <div className="md:w-1/2 sm:w-full max-md:h-1/2">
                                     <Image
                                         src="/elephant.svg"
                                         alt="elephant"
@@ -76,12 +80,14 @@ const Dashboard = () => {
                             }
                         />
 
-                        <div className="bg-white col-span-full">
-
+                        <div className="col-span-full">
+                            <WalletTable />
                         </div>
                     </Container>
                 </div>
             </div>
+
+            <Footer hideLogo />
         </main>
     );
 }
