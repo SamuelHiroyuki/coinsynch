@@ -12,7 +12,6 @@ import Image from "next/image";
 import { WalletTable } from "@/components/WalletTable";
 import { Footer } from "@/components/Footer";
 
-
 const Dashboard = () => {
     const balance = wallet(state => state.balance)
 
