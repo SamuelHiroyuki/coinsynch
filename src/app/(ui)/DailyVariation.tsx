@@ -25,7 +25,7 @@ async function fetchCoin(crypto: string) {
 async function fetchVariation(crypto: string) {
     try {
         const coin = await fetchCoin(crypto)
-        const response = await fetch(`http://localhost:8080/https://api.coingecko.com/api/v3/coins/${crypto}/market_chart?vs_currency=usd&days=1`, {
+        const response = await fetch(`https://api.coingecko.com/api/v3/coins/${crypto}/market_chart?vs_currency=usd&days=1`, {
             next: {
                 revalidate: 60
             }
