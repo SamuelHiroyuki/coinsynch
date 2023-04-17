@@ -11,7 +11,7 @@ export function SideMenu() {
     return (
         <aside
             className={cx(
-                "border-y border-secondary-300",
+                "border-y border-secondary-300 z-10",
                 "xl:static sm:absolute xl:h-[unset] sm:h-[calc(100%_-_64px)] transition-transform",
                 isOpen ? "translate-x-0" : '-translate-x-60',
                 "xl:!translate-x-0"
