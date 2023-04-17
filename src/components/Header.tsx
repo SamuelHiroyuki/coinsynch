@@ -8,7 +8,7 @@ import { TopCoinsCarousel } from './TopCoinsCarousel'
 import { useSession } from 'next-auth/react'
 import { Suspense } from 'react'
 
-export function Header({ hideShadow = false }: { hideShadow?: boolean }) {
+function Header({ hideShadow = false }: { hideShadow?: boolean }) {
     const session = useSession()
 
     return (
@@ -52,3 +52,4 @@ export function Header({ hideShadow = false }: { hideShadow?: boolean }) {
         </header>
     )
 }
+export default Header

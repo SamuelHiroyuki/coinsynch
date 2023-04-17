@@ -1,15 +1,15 @@
 "use client"
 
 import { Container } from "@/components/Container";
-import { DashboardHeader } from "@/components/DashboardHeader";
+import DashboardHeader from "@/components/DashboardHeader";
 import { Icon } from "@/components/Icon";
 import { PillCard } from "@/components/PillCard";
-import { SideMenu } from "@/components/SideMenu";
+import SideMenu from "@/components/SideMenu";
 import { wallet } from "@/stores/wallet";
 import { Suspense, useMemo } from "react";
 import DailyVariation from "../(ui)/DailyVariation";
 import Image from "next/image";
-import { WalletTable } from "@/components/WalletTable";
+import WalletTable from "@/components/WalletTable";
 import { Footer } from "@/components/Footer";
 
 const Dashboard = () => {

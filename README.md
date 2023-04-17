@@ -16,7 +16,7 @@
 npm install -f
 ```
 
-> ⚠️ Este repositório utiliza a versão `13.3.1-canary.4` do Nextjs que corrige um bug nas features de Parallel Routes e Intercepting Routes. 
+> ⚠️ Este repositório utiliza a versão `13.3.1-canary.1` do Nextjs que corrige um bug nas features de Parallel Routes e Intercepting Routes. 
 > É por isso que é necessário instalar as dependências utilizando o parâmetro `-f`
 
 

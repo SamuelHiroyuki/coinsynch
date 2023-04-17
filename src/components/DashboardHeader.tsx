@@ -8,7 +8,7 @@ import { sideMenu } from '@/stores/sideMenu'
 import Button from './Button'
 import { signOut, useSession } from 'next-auth/react'
 
-export function DashboardHeader({ hideShadow = false }: { hideShadow?: boolean }) {
+function DashboardHeader({ hideShadow = false }: { hideShadow?: boolean }) {
     const toggleMenu = sideMenu(store => store.toggleMenu)
     const session = useSession()
 
@@ -63,3 +63,5 @@ export function DashboardHeader({ hideShadow = false }: { hideShadow?: boolean }
         </header>
     )
 }
+
+export default DashboardHeader

@@ -3,7 +3,7 @@ import Carousel from "@/components/Carousel";
 import { Container } from "@/components/Container";
 import { FancyCard } from "@/components/FancyCard";
 import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import Header from "@/components/Header";
 import TopCryptosTable from "@/components/TopCryptosTable";
 import Image from "next/image";
 import { Suspense } from "react";

@@ -5,7 +5,7 @@ import Button from "./Button";
 import Tooltip from "./Tooltip";
 import { sideMenu } from '@/stores/sideMenu';
 
-export function SideMenu() {
+function SideMenu() {
     const [isOpen, toggleMenu] = sideMenu(store => [store.isOpen, store.toggleMenu])
 
     return (
@@ -78,3 +78,5 @@ export function SideMenu() {
         </aside>
     )
 }
+
+export default SideMenu

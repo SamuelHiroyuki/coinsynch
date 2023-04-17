@@ -4,13 +4,13 @@ import Image from 'next/image'
 import { Icon } from './Icon'
 import Button from './Button'
 import { useState } from 'react'
-import WalletModal, { SelectOption } from './WalletModal'
+import WalletModal from './WalletModal'
 import { cx } from "class-variance-authority";
 import { OwnedCoin, wallet } from '@/stores/wallet'
 import { useMediaQuery } from 'react-responsive'
 import TransferModal from './TransferModal'
 
-export function WalletTable() {
+function WalletTable() {
     const [isOpen, setIsOpen] = useState(false)
     const [selectedCrypto, setSelectedCrypto] = useState<OwnedCoin | null>(null)
     const owned = wallet(state => state.owned)
@@ -176,3 +176,5 @@ export function WalletTable() {
         </div>
     )
 }
+
+export default WalletTable
