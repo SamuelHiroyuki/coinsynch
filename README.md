@@ -7,7 +7,11 @@
 <p align="center">
   <a href="#instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#layout">Layout</a>&nbsp;&nbsp;&nbsp;
+</p>
+
+<p align="center">
+  <a href="https://coinsynch-ghrwoo4r5-samuelhiroyuki.vercel.app/">Live Preview</a>
 </p>
 
 ## 💾 Instalação
